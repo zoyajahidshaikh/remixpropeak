@@ -2,9 +2,8 @@
 
 import mongoose, { Document } from 'mongoose';
 
-// Define the database model
 export interface IGroup extends Document {
-  appLevelAccess: any; // Add this property
+  appLevelAccess: any;
   groupName: string;
   groupMembers: any[]; // Update the type as needed
   isDeleted: boolean;
@@ -31,6 +30,6 @@ const GroupSchema = new mongoose.Schema({
   versionKey: false,
 });
 
-const Group = mongoose.model<IGroup>('group', GroupSchema);
+const Group = mongoose.model<IGroup>('Group', GroupSchema);
 
 export default Group;

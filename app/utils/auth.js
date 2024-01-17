@@ -1,4 +1,8 @@
-import { isEmpty } from 'lodash';
+
+//auth.js
+// import { isEmpty } from 'lodash';
+import _ from 'lodash';
+
 import {ACCESS_TOKEN} from '../common/const';
 const USER_INFO = 'userInfo';
 
@@ -78,7 +82,7 @@ const Auth = {
    * @param {Boolean} isLocalStorage  Defines if we need to store in localStorage or sessionStorage
    */
   set(key,value,isLocalStorage) {
-    if (isEmpty(value)) {
+    if (_.isEmpty(value)) {
       return null;
     }
 

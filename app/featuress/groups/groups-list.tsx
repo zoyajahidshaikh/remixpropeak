@@ -1,11 +1,14 @@
+// features/groups/groups-list.tsx
+
 import * as React from 'react';
 import * as validate from '../../common/validate-entitlements';
 import { useNavigate } from '@remix-run/react';
 
 interface IGroup {
   _id: string;
-  groupMembers: any[];
+  appLevelAccess: any; // Add this property if needed
   groupName: string;
+  groupMembers: any[]; // Update the type as needed
   isDeleted: boolean;
 }
 
@@ -15,6 +18,7 @@ interface GroupListProps {
 
 const GroupList: React.FC<GroupListProps> = React.memo(({ groups }) => {
   const navigate = useNavigate();
+
   var groupView = groups.map((group) => {
     return (
       <li
@@ -22,10 +26,8 @@ const GroupList: React.FC<GroupListProps> = React.memo(({ groups }) => {
         key={group._id}
       >
         <div>{group.groupName}</div>
-
-        {/* Assuming you still want to check for editUserGroup */}
         {validate.validateAppLevelEntitlements(
-          group.appLevelAccess, // Assuming appLevelAccess is still a property of each group
+          group.appLevelAccess,
           'User Groups',
           'Edit'
         ) ? (
@@ -40,12 +42,11 @@ const GroupList: React.FC<GroupListProps> = React.memo(({ groups }) => {
           ''
         )}{' '}
         &nbsp;
-        {/* Assuming onDelete is still a property of each group */}
-        {group.onDelete && (
+        {group.isDeleted && (
           <span
             className="btn btn-xs btn-outline-danger"
             title="Delete Group"
-            onClick={() => group.onDelete && group.onDelete(group._id)}
+            onClick={() => {/* Add your delete logic here */}}
           >
             🗑
           </span>
@@ -58,6 +59,3 @@ const GroupList: React.FC<GroupListProps> = React.memo(({ groups }) => {
 });
 
 export default GroupList;
-
-
-
