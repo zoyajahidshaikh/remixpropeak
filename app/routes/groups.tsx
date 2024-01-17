@@ -8,9 +8,10 @@ import { json } from "@remix-run/node";
 
 export const loader: LoaderFunction = async () => {
   const groups: Group[] = await GroupModel.find({});
-  console.log(groups, 'data............');
-  return json({ groups });
+  console.log(groups, 'group wala data............');
+  return json(groups);
 };
+
 
 export default function Groups() {
   const groups: Group[] = useLoaderData();

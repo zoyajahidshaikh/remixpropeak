@@ -1,24 +1,31 @@
-import mongoose, { Document } from "mongoose";
+// models/group-model.ts
+
+import mongoose, { Document } from 'mongoose';
 
 // Define the database model
-interface IGroup extends Document {
+export interface IGroup extends Document {
+  appLevelAccess: any; // Add this property
   groupName: string;
   groupMembers: any[]; // Update the type as needed
   isDeleted: boolean;
 }
 
 const GroupSchema = new mongoose.Schema({
+  appLevelAccess: {
+    type: mongoose.Schema.Types.Mixed,
+    required: true,
+  },
   groupName: {
     type: String,
-    required: true, // Adjust as needed
+    required: true,
   },
   groupMembers: {
-    type: [mongoose.Schema.Types.Mixed], // Update the type as needed
+    type: [mongoose.Schema.Types.Mixed],
     default: [],
   },
   isDeleted: {
     type: Boolean,
-    default: false, // Adjust as needed
+    default: false,
   },
 }, {
   versionKey: false,
