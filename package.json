@@ -15,8 +15,11 @@
     "@remix-run/node": "^2.5.0",
     "@remix-run/react": "^2.5.0",
     "@remix-run/serve": "^2.5.0",
+    "fullcalendar-reactwrapper": "^1.0.7",
     "isbot": "^4.1.0",
+    "jspdf-autotable": "^3.8.1",
     "react": "^18.2.0",
+    "react-csv": "^2.2.2",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {

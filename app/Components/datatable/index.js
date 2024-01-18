@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import "./datatable.css";
 import Pagination from "../pagination";
 import { CSVLink } from "react-csv";
-import * as jsPDF from "jspdf";
+// import * as jsPDF from "jspdf";
+import jsPDF from "jspdf";
+
 import * as autoTable from "jspdf-autotable";
 
 export default class DataTable extends React.Component {

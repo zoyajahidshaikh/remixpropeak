@@ -7,7 +7,7 @@ import GroupList from "../featuress/groups/groups-list";
 import { useLoaderData } from "@remix-run/react";
 import mongoose, { ConnectOptions } from "mongoose";
 import config from "../config/config";
-
+import LeaveList from "../featuress/leave/components/leave-list";
 interface MyConnectOptions extends ConnectOptions {
   useUnifiedTopology?: boolean;
 }
@@ -53,6 +53,12 @@ export default function Index() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>HELLO</h1>
       <GroupListWrapper />
+      <LeaveList/>
     </div>
   );
 }
+1850
+
+672
+549
+831

@@ -1,5 +1,5 @@
 {
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/featuress/access-rights/access-rights.jsx"],
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/featuress/access-rights/access-rights.tsx"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
