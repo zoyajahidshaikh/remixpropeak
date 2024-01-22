@@ -1,4 +1,4 @@
-module.exports = Object.freeze({
+const config = Object.freeze({
     //domain:[ "@algorisys.com","@gmail.com"],
     Export: false,
     showIsMiscellaneous: true,
@@ -13,3 +13,5 @@ module.exports = Object.freeze({
     profileUrl: '/api/ProfilePic/',
     defaultProjectName:'DefaultProject'
 });
+
+
